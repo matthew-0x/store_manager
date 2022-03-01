@@ -21,13 +21,13 @@ Write this JSON output to a file named `summaries/GroupedOrders.json`.
 
 Treat the `Customers.json` file like a database — not all customers in the `Customers.json` file would have made a purchase that day, and when reading from the file consider memory efficient approaches.
 
-### Part 2: Updating Stock
+### Part 2: Process XML and convert to Object asynchronously 
 
 The Stock.xml file includes the quantity of each item purchased that day & it is incorrect until updated from today's orders. For each order, update the corresponding quantities in the `Stock.xml` file.
 
 Remove any duplicates & add products if they do not exist.
 
-The updated Stock should be output to `summaries/Stock.xml`.
+The updated Stock should be placed in `summaries/Stock.xml`.
 
 ## Considerations
 
