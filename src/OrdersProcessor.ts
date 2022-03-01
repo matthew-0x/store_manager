@@ -19,15 +19,15 @@ export class Orders {
   };
 
   process_orders = () => {
-    const orderCSVFile: string = process.env.orderData!;
-    const ordersJsonFile: string = process.env.ordersJsonFile!;
-    const summaryDirectory: string = process.env.summaryDirectory!;
+    
+    const dir = `${__dirname}/summaries`;
+    const orderCSVFile: string = `${__dirname}/data/Orders.csv`;
     const results: Array<IOrder> = [];
 
-    fs.promises.mkdir(summaryDirectory, { recursive: true }).catch((e) => {
+    fs.promises.mkdir(dir, { recursive: true }).catch((e) => {
       console.log('error creating directory', e);
     });
-    fs.createReadStream(orderCSVFile) //read directory data from environment variable
+    fs.createReadStream(orderCSVFile) //read orders data
       .on('error', (e: Error) => {
         console.log('ReadStream error happened', e);
       })
@@ -38,7 +38,7 @@ export class Orders {
       .on('end', async () => {
         const groupedOrders = await this.groupBy(results, 'customerId');
         const jsonGroupedOrders = JSON.stringify(groupedOrders);
-        fs.createWriteStream(`${summaryDirectory}/${ordersJsonFile}`).write(
+        fs.createWriteStream(`${dir}/GroupedOrders.json`).write(
           jsonGroupedOrders,
           (error) => {
             if (error) {
