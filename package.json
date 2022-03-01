@@ -1,9 +1,9 @@
 {
-  "name": "challengekit-ts",
+  "name": "store_manager_system",
   "version": "0.0.0",
-  "main": "dist/index.ts",
-  "repository": "https://github.com/willhackett/challengekit-ts",
-  "author": "Will Hackett <12025460+willhackett@users.noreply.github.com>",
+  "main": "index.ts",
+  "private": true, 
+  "author": "Matt",
   "license": "MIT",
   "scripts": {
     "build": "tsc",
