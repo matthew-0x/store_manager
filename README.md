@@ -1,4 +1,4 @@
-# Grocery Store — Coding Challenge
+# Grocery Store 
 
 A grocery store needs to prepare updates for two systems every night at 12:00 AM. The systems consume data in their own proprietary formats, one is already generated and needs to be updated and the other needs to be manually generated.  The first system is used for stock ordering. It needs to know how many products have been consumed throughout the day so that it can generate orders for the store. This data is formatted as XML. The second system is used for promotions to customers. It needs to know what products each customer purchased. It will only receive information about customers who used their customer loyalty card when ordering. This data is formatted as JSON.
 
